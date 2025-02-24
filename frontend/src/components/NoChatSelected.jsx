@@ -1,4 +1,4 @@
-import { MessageCircleHeart } from "lucide-react";
+// import { MessageCircleHeart } from "lucide-react";
 
 const NoChatSelected = () => {
   return (
@@ -8,7 +8,8 @@ const NoChatSelected = () => {
         <div className="flex justify-center gap-4 mb-4">
           <div className="relative">
             <div className="size-16 rounded-2xl bg-primary/10 flex items-center justify-center animate-bounce">
-              <MessageCircleHeart className="size-8 text-primary" />
+              {/* <MessageCircleHeart className="size-8 text-primary" /> */}
+              <img src="/logo.png" alt="logo" />
             </div>
           </div>
         </div>
