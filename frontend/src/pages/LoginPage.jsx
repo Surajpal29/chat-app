@@ -7,7 +7,6 @@ import {
   Loader2,
   Lock,
   Mail,
-  MessageCircleHeart,
 } from "lucide-react";
 import { Link } from 'react-router-dom'
 
@@ -28,23 +27,27 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen grid lg:grid-cols-2 ">
       {/* left side */}
+
+      <AuthImagePattern
+        title="Join Our LetsTalk Community"
+        subtitle="connect with friends, share moments, and stay in touch with your loved ones."
+      />
+      {/* right side */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
           {/* logo */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
               <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <MessageCircleHeart className="size-6 text-primary" />
+                {/* <MessageCircleHeart className="size-6 text-primary" /> */}
+                <img src="/logo.png" alt="logo" />
               </div>
               <h1 className="text-2xl font-bold mt-2">Welcome Back</h1>
-              <p className="text-base-content/60 ">
-                Sign in to your account
-              </p>
+              <p className="text-base-content/60 ">Sign in to your account</p>
             </div>
           </div>
           {/* form */}
           <form onSubmit={handleSubmit} className="space-y-6">
-          
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium">Email </span>
@@ -119,11 +122,6 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-      {/* right side */}
-      <AuthImagePattern
-        title="Join Our Community"
-        subtitle="connect with friends, share moments, and stay in touch with your loved ones."
-      />
     </div>
   );
 }

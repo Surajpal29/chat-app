@@ -6,7 +6,6 @@ import {
   Loader2,
   Lock,
   Mail,
-  MessageCircleHeart,
   User,
 } from "lucide-react";
 import AuthImagePattern from '../components/AuthImagePattern.jsx'
@@ -44,17 +43,23 @@ const SignUpPage = () => {
   return (
     <div className="min-h-screen grid lg:grid-cols-2 ">
       {/* left side */}
+      <AuthImagePattern
+        title="Join Our LetsTalk Community"
+        subtitle="connect with friends, share moments, and stay in touch with your loved ones."
+      />
+      {/* right side */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
           {/* logo */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
               <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <MessageCircleHeart className="size-6 text-primary" />
+                {/* <MessageCircleHeart className="size-6 text-primary" /> */}
+                <img src="/logo.png" alt="logo" />
               </div>
               <h1 className="text-2xl font-bold mt-2">Create Account</h1>
               <p className="text-base-content/60 ">
-                Get started with your free account
+                Get started to chat
               </p>
             </div>
           </div>
@@ -145,7 +150,7 @@ const SignUpPage = () => {
           </form>
           <div className="text-center">
             <p className="text-base-content/60">
-              Already have am account?{" "}
+              Already have an account?{" "}
               <Link to="/login" className="link link-primary">
                 Sign in
               </Link>
@@ -153,11 +158,7 @@ const SignUpPage = () => {
           </div>
         </div>
       </div>
-      {/* right side */}
-      <AuthImagePattern
-        title="Join Our Community"
-        subtitle="connect with friends, share moments, and stay in touch with your loved ones."
-      />
+      
     </div>
   );
 }
