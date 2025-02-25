@@ -7,8 +7,8 @@ const Navbar = () => {
     const {authUser,logout}=useAuthStore()
   return (
     <header className="bg-base-100 border-b border-base-300 fixed w-full top-0 z-40 backdrop-blur-lg bg-base-100/80">
-      <div className="container mx-auto px-24 h-16 flex justify-between ">
-        <div className="flex items-center gap-8">
+      <div className="container  md:mx-auto px-5 md:px-24 h-16 flex justify-between gap-5 ">
+        <div className="flex items-center gap-8 ">
           <Link
             to="/"
             className="flex items-center gap-2.5 hover:opacity-80 transition-all">
