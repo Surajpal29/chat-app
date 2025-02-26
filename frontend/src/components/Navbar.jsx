@@ -2,12 +2,13 @@
 import { useAuthStore } from '../store/useAuthStore'
 import { Link } from 'react-router-dom'
 import { LogOut, Settings, User } from "lucide-react";
+import DrawerShownOnlyInMobileScreen from './DrawerShownOnlyInMobileScreen';
 
 const Navbar = () => {
     const {authUser,logout}=useAuthStore()
   return (
     <header className="bg-base-100 border-b border-base-300 fixed w-full top-0 z-40 backdrop-blur-lg bg-base-100/80">
-      <div className="container  md:mx-auto px-5 md:px-24 h-16 flex justify-between gap-5 ">
+      <div className="container  md:mx-auto px-5 md:px-24 h-16 flex justify-between items-center gap-5 ">
         <div className="flex items-center gap-8 ">
           <Link
             to="/"
@@ -20,7 +21,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 ">
+        <div className="hidden md:flex items-center gap-2 ">
           <Link to="settings" className={`btn btn-sm gap-2 transition-colors`}>
             <Settings className="w-4 h-4" />
             <span className="hidden sm:inline">Settings</span>
@@ -40,6 +41,8 @@ const Navbar = () => {
             </>
           )}
         </div>
+
+        <DrawerShownOnlyInMobileScreen/>
       </div>
     </header>
   );

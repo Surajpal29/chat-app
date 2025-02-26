@@ -84,7 +84,47 @@ export const useChatStore = create((set,get) => ({
 
     
     setSelectedUser: async (selectedUser) => {
-        set({ selectedUser })
-        
-    }
+        set({ selectedUser })   
+    },
+
+  deleteSingleMessage: async (messageId, userId) => {
+  try {
+    await axiosInstance.put(`/messages/deleteOne/${messageId}/${userId}`);
+
+    // 🔥 Backend se latest messages fetch karo
+    const updatedMessages = get().messages.filter((msg) => msg._id !== messageId);
+    
+    set({ messages: updatedMessages });
+
+    toast.success("Message deleted for you");
+  } catch (error) {
+    console.error("Error deleting message", error);
+    toast.error("Failed to delete message");
+  }
+},
+
+
+   
+ deleteAllMessages: async (userId, selectedUserId) => {
+  try {
+    await axiosInstance.put(`/messages/deleteAll/${userId}/${selectedUserId}`);
+
+    set({
+      messages: get().messages.filter(
+        (msg) => !(
+          (msg.senderId === userId && msg.receiverId === selectedUserId) ||
+          (msg.senderId === selectedUserId && msg.receiverId === userId)
+        )
+      ),
+    });
+
+    toast.success("Chat deleted for you");
+  } catch (error) {
+    console.error("Error deleting chat", error);
+    toast.error("Failed to delete chat");
+  }
+}
+
+
+
 }))

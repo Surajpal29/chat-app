@@ -16,6 +16,9 @@ const messageSchema = new mongoose.Schema({
     },
     image: {
         type: String
+    }, deletedFor: {
+        type: [String],
+        default: []
     }
 },{timestamps: true})
 

@@ -16,20 +16,20 @@ import { useThemeStore } from "./store/useThemeStore";
 
 const App = () => {
 
-  const { authUser, checkAuth, isCheckingAuth,onlineUsers } = useAuthStore();
+  const { authUser, checkAuth, isCheckingAuth} = useAuthStore();
   const { theme } = useThemeStore();
 
-  console.log('====================================');
-  console.log(onlineUsers);
-  console.log('====================================');
+  // console.log('====================================');
+  // console.log(onlineUsers);
+  // console.log('====================================');
   
   useEffect(() => {
     checkAuth()
   }, [checkAuth])
   
-  console.log('====================================');
-  console.log("authuser",authUser);
-  console.log('====================================');
+  // console.log('====================================');
+  // console.log("authuser",authUser);
+  // console.log('====================================');
 
   // agar user authnhi h aur check kr rahe h tab loder dikhayenge
   if (isCheckingAuth && !authUser) return (
